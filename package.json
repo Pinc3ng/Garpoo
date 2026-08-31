@@ -1,0 +1,19 @@
+{
+  "name": "garpoo-cafe-qr-ordering",
+  "version": "1.0.0",
+  "description": "Smart QR Code Ordering & POS System for Garpoo Cafe & Eatery Medan",
+  "main": "server.js",
+  "scripts": {
+    "dev": "deno run --allow-net --allow-read server.js",
+    "start": "deno run --allow-net --allow-read server.js"
+  },
+  "keywords": [
+    "garpoo",
+    "cafe-medan",
+    "qr-order",
+    "pos-system",
+    "restaurant-app"
+  ],
+  "author": "Antigravity Pair Programmer",
+  "license": "MIT"
+}
