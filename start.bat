@@ -6,8 +6,8 @@ echo ===================================================
 echo.
 echo Starting local web server at http://localhost:5173 ...
 echo.
-deno run --allow-net --allow-read dev-server.js
+deno run --allow-net --allow-read tools/dev-server.js
 if %ERRORLEVEL% NEQ 0 (
-  "%LOCALAPPDATA%\Microsoft\WinGet\Packages\DenoLand.Deno_Microsoft.Winget.Source_8wekyb3d8bbwe\deno.exe" run --allow-net --allow-read dev-server.js
+  "%LOCALAPPDATA%\Microsoft\WinGet\Packages\DenoLand.Deno_Microsoft.Winget.Source_8wekyb3d8bbwe\deno.exe" run --allow-net --allow-read tools/dev-server.js
 )
 pause
