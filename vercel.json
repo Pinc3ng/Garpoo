@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "public": true,
-  "rewrites": [
-    { "source": "/images/(.*)", "destination": "/public/images/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "framework": null,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
