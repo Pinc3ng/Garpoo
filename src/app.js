@@ -187,7 +187,7 @@ export function renderApp() {
 
         <!-- Active Order Notice -->
         ${hasActiveSession ? `
-          <div style="margin: 0 16px 14px; padding: 12px 16px; border-radius: var(--radius-md); background: linear-gradient(135deg, #1E150F, #32251B); color: #FFFFFF; display: flex; align-items: center; justify-content: space-between; border: 1.5px solid rgba(234, 160, 35, 0.4); box-shadow: var(--shadow-sm);">
+          <div style="margin: 0 14px 14px; padding: 12px 14px; border-radius: var(--radius-md); background: linear-gradient(135deg, #1E150F, #32251B); color: #FFFFFF; display: flex; align-items: center; justify-content: space-between; gap: 10px; border: 1.5px solid rgba(234, 160, 35, 0.4); box-shadow: var(--shadow-sm); box-sizing: border-box;">
             <div>
               <div style="font-size: 0.72rem; color: var(--color-amber); font-weight: 700; text-transform: uppercase;">Pesanan Meja ${state.tableNumber} Sedang Diproses</div>
               <div style="font-size: 0.85rem; font-weight: 700;">${tableSession.totalItems} Porsi (${tableSession.orders.length} Ronde) • Rp ${tableSession.totalBill.toLocaleString('id-ID')}</div>

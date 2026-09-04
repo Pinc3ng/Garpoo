@@ -96,7 +96,8 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -107,7 +108,8 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   overflow-x: hidden;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   touch-action: pan-x pan-y;
   overscroll-behavior-y: none;
   transition: background-color var(--transition-normal), color var(--transition-normal);
@@ -154,16 +156,19 @@ img {
 
 /* App Container */
 .app-wrapper {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* For Customer Mobile View */
 .customer-view {
+  width: 100%;
   max-width: 560px;
   margin: 0 auto;
   min-height: 100vh;
@@ -171,6 +176,8 @@ img {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.04);
   position: relative;
   padding-bottom: 140px; /* Space for floating cart & bottom nav */
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* For POS & Admin Tablet / Desktop View */
@@ -193,23 +200,28 @@ img {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border-subtle);
-  padding: 12px 18px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
   transition: all var(--transition-normal);
 }
 
 .brand-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
+  min-width: 0;
+  flex: 1;
 }
 
 .brand-logo-badge {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
   background: linear-gradient(135deg, #2A1A10, #130B06);
   display: flex;
@@ -236,11 +248,13 @@ img {
 .brand-texts {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .brand-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   font-weight: 800;
   letter-spacing: 0.5px;
   color: var(--color-text-main);
@@ -248,35 +262,43 @@ img {
   align-items: center;
   gap: 6px;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .brand-tag {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--color-caramel);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 /* Table Pill Selector */
 .table-pill-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
+  gap: 4px;
+  padding: 6px 11px;
   background: var(--color-caramel-light);
   border: 1.5px solid var(--color-caramel);
   border-radius: var(--radius-full);
   color: var(--color-caramel);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -292,8 +314,8 @@ img {
 }
 
 .icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-full);
   border: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -302,6 +324,7 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -315,11 +338,12 @@ img {
    ========================================================= */
 .cafe-hero {
   position: relative;
-  margin: 14px 16px;
+  margin: 12px 14px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   background: #1C140E;
+  box-sizing: border-box;
 }
 
 .hero-image-wrap {
@@ -403,20 +427,23 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin: 0 16px 14px;
+  margin: 0 14px 14px;
+  box-sizing: border-box;
 }
 
 .quick-card-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
+  gap: 8px;
+  padding: 10px 10px;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: left;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .quick-card-btn:hover {
@@ -425,13 +452,13 @@ img {
 }
 
 .quick-card-icon {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
@@ -445,28 +472,42 @@ img {
   color: #4338CA;
 }
 
+.quick-card-texts {
+  min-width: 0;
+  overflow: hidden;
+  flex: 1;
+}
+
 .quick-card-texts strong {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .quick-card-texts span {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 /* =========================================================
    SEARCH & CATEGORY FILTER
    ========================================================= */
 .search-filter-section {
-  padding: 0 16px 10px;
+  padding: 6px 14px 10px;
   position: sticky;
-  top: 69px;
+  top: 58px;
   z-index: 90;
   background: var(--color-bg);
-  padding-top: 6px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .search-input-wrap {
@@ -474,6 +515,8 @@ img {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .search-input-wrap svg {
@@ -492,6 +535,7 @@ img {
   font-size: 16px;
   outline: none;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -506,6 +550,8 @@ img {
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-bottom: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .categories-scroll::-webkit-scrollbar {
@@ -525,6 +571,7 @@ img {
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -544,7 +591,9 @@ img {
    MENU CATALOG & DISH CARDS
    ========================================================= */
 .menu-catalog-container {
-  padding: 10px 16px;
+  padding: 10px 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .catalog-section-header {
@@ -570,7 +619,9 @@ img {
 .menu-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Horizontal Food Card */
@@ -585,6 +636,9 @@ img {
   cursor: pointer;
   position: relative;
   transition: all var(--transition-normal);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .menu-card:hover {
@@ -594,8 +648,8 @@ img {
 }
 
 .menu-card-img-wrap {
-  width: 105px;
-  height: 105px;
+  width: 92px;
+  height: 92px;
   border-radius: var(--radius-md);
   overflow: hidden;
   flex-shrink: 0;
@@ -631,18 +685,22 @@ img {
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .menu-card-top {
   display: flex;
   flex-direction: column;
   gap: 3px;
+  min-width: 0;
 }
 
 .menu-card-badges {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .badge-mini-popular {
@@ -666,16 +724,18 @@ img {
   font-weight: 700;
   color: var(--color-text-main);
   line-height: 1.25;
+  word-break: break-word;
 }
 
 .menu-card-desc {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--color-text-muted);
   line-height: 1.35;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  word-break: break-word;
 }
 
 .menu-card-bottom {
@@ -683,13 +743,16 @@ img {
   align-items: center;
   justify-content: space-between;
   margin-top: 6px;
+  gap: 8px;
+  min-width: 0;
 }
 
 .menu-card-price {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--color-caramel);
+  white-space: nowrap;
 }
 
 .original-price {
@@ -704,7 +767,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: var(--radius-full);
   background: var(--color-caramel);
   color: #FFFFFF;
@@ -712,6 +775,8 @@ img {
   font-size: 0.78rem;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -906,14 +971,15 @@ img {
    ========================================================= */
 .floating-cart-bar {
   position: fixed;
-  bottom: 66px; /* Above unified bottom nav bar */
+  bottom: calc(66px + env(safe-area-inset-bottom, 0px)); /* Above unified bottom nav bar */
   left: 0;
   right: 0;
   z-index: 92;
   display: flex;
   justify-content: center;
-  padding: 0 16px;
+  padding: 0 14px;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .floating-cart-inner {
@@ -1009,6 +1075,7 @@ img {
   display: flex;
   justify-content: center;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .app-nav-inner {
