@@ -222,27 +222,24 @@ img {
 .brand-logo-badge {
   width: 38px;
   height: 38px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #2A1A10, #130B06);
+  border-radius: 50%;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-amber);
-  box-shadow: 0 4px 12px rgba(30, 21, 15, 0.2);
+  box-shadow: 0 2px 8px rgba(30, 21, 15, 0.15);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(234, 160, 35, 0.3);
+  border: 1.5px solid var(--color-caramel);
   flex-shrink: 0;
 }
 
-.brand-logo-badge::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent);
+.brand-logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .brand-texts {

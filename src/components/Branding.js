@@ -11,15 +11,8 @@ export function renderGarpooLogo({ size = 'medium', showTagline = true, showInst
 
   return `
     <div class="brand-container">
-      <div class="brand-logo-badge" style="width: ${logoWidth}px; height: ${logoHeight}px;">
-        <!-- Stylized Fork & Coffee Cup Icon for Garpoo -->
-        <svg width="${logoWidth * 0.6}" height="${logoHeight * 0.6}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Fork Symbol -->
-          <path d="M12 2V12M12 12V22M12 12H8V6C8 4 9 2 9 2M12 12H16V6C16 4 15 2 15 2" stroke="#EAA023" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Coffee Sparkles / Steam -->
-          <path d="M6 3C6 3 7 4 7 5C7 6 6 7 6 7" stroke="#F5B041" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18 3C18 3 17 4 17 5C17 6 18 7 18 7" stroke="#F5B041" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+      <div class="brand-logo-badge" style="width: ${logoWidth}px; height: ${logoHeight}px; border-radius: 50%; padding: 0; background: #FFFFFF; border: 1.5px solid #B8621B; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(30, 21, 15, 0.12); flex-shrink: 0;">
+        <img src="./images/garpoo-logo.png" alt="Garpoo Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" />
       </div>
       <div class="brand-texts">
         <div class="brand-title" style="font-size: ${titleSize};">

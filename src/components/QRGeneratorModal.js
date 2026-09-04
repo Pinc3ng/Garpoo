@@ -33,10 +33,8 @@ export function renderQRGeneratorModal(initialTable = '01') {
           <div class="qr-standee-preview printable-area" id="qr-printable-standee">
             <!-- Header Brand -->
             <div style="display: flex; align-items: center; gap: 8px;">
-              <div class="brand-logo-badge" style="width: 36px; height: 36px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2V12M12 12V22M12 12H8V6C8 4 9 2 9 2M12 12H16V6C16 4 15 2 15 2" stroke="#EAA023" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+              <div class="brand-logo-badge" style="width: 36px; height: 36px; border-radius: 50%;">
+                <img src="./images/garpoo-logo.png" alt="Garpoo Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" />
               </div>
               <div style="text-align: left;">
                 <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; letter-spacing: 0.5px; line-height: 1;">

@@ -44,10 +44,8 @@ export function renderAdminPOS({ activeTab = 'orders', selectedTableNum = null }
       <!-- POS Top Bar -->
       <div class="pos-header">
         <div style="display: flex; align-items: center; gap: 14px;">
-          <div class="brand-logo-badge" style="width: 48px; height: 48px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2V12M12 12V22M12 12H8V6C8 4 9 2 9 2M12 12H16V6C16 4 15 2 15 2" stroke="#EAA023" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <div class="brand-logo-badge" style="width: 44px; height: 44px; border-radius: 50%;">
+            <img src="./images/garpoo-logo.png" alt="Garpoo Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;" />
           </div>
           <div>
             <div style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; display: flex; align-items: center; gap: 8px;">
