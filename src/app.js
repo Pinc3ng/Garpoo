@@ -618,7 +618,7 @@ function renderCartDrawerModal() {
           <div style="background: var(--color-bg-alt); padding: 12px; border-radius: var(--radius-md); border: 1px dashed var(--color-border);">
             <div style="font-size: 0.8rem; font-weight: 700; margin-bottom: 6px;">🎟️ Voucher Promo:</div>
             <div style="display: flex; gap: 8px;">
-              <input type="text" id="voucher-input" placeholder="GARPOOPERDANA" value="${state.appliedVoucher ? state.appliedVoucher.code : ''}" style="flex-grow: 1; padding: 8px 12px; border-radius: var(--radius-full); border: 1px solid var(--color-border); font-size: 0.82rem; text-transform: uppercase; font-family: var(--font-mono); font-weight: 700;" />
+              <input type="text" id="voucher-input" placeholder="GARPOOPERDANA" value="${state.appliedVoucher ? state.appliedVoucher.code : ''}" style="flex-grow: 1; padding: 8px 12px; border-radius: var(--radius-full); border: 1px solid var(--color-border); font-size: 16px; text-transform: uppercase; font-family: var(--font-mono); font-weight: 700;" />
               <button type="button" id="btn-apply-voucher" style="padding: 8px 16px; border-radius: var(--radius-full); background: var(--color-espresso); color: #FFF; font-weight: 700; font-size: 0.8rem; border: none; cursor: pointer;">
                 Pakai
               </button>

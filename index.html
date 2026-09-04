@@ -2,7 +2,62 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover, shrink-to-fit=no" />
+  <script>
+    // Comprehensive viewport lock & zoom suppression for iOS Safari & Android Chrome
+    (function() {
+      // 1. Block iOS Safari pinch-to-zoom gestures at both document and window level
+      ['gesturestart', 'gesturechange', 'gestureend'].forEach(function(event) {
+        document.addEventListener(event, function(e) {
+          e.preventDefault();
+        }, { passive: false, capture: true });
+        window.addEventListener(event, function(e) {
+          e.preventDefault();
+        }, { passive: false, capture: true });
+      });
+
+      // 2. Block multi-touch gestures (2+ fingers) at start to cancel gesture recognizers
+      document.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false, capture: true });
+
+      // 3. Block multi-touch on move (pinch gesture in progress)
+      document.addEventListener('touchmove', function(e) {
+        if (e.touches && e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false, capture: true });
+
+      // 4. Block double-tap to zoom while preserving single clicks
+      var lastTouchEnd = 0;
+      document.addEventListener('touchend', function(e) {
+        var now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          e.preventDefault();
+          if (e.target && typeof e.target.click === 'function') {
+            e.target.click();
+          }
+        }
+        lastTouchEnd = now;
+      }, { passive: false });
+
+      // 5. Disable trackpad & mouse ctrl+wheel zoom
+      window.addEventListener('wheel', function(e) {
+        if (e.ctrlKey) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      // 6. Disable keyboard zoom shortcuts (Ctrl/Cmd + '+', '-', '0')
+      window.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')) {
+          e.preventDefault();
+        }
+      });
+    })();
+  </script>
   <title>Garpoo Cafe Medan - Menu Digital & QR Order</title>
   <meta name="description" content="Sistem pemesanan mandiri & menu digital Garpoo Cafe Medan (Jl. Sutomo No.13). Scan QR di meja, pilih menu favorit, nikmati kemudahan pesan tambahan & pembayaran instan." />
   
